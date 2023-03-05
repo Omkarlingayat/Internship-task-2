@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------------------------ css file link and bootstrap link for css -------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"  href="'Style.css"/>
+    <!-- ------------------ font awesome --------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel=sylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Resume Builder</title>
+</head>
+<body id="body">
+    <div class="container">
+         <!---------------------- nvabar ------------------------------------>
+         <div class="navbar" style="border-color: black;">
+            <img height="60px" width="110px" class="my-3" src="img/logo.png"/>
+            <h1 class="my-2">Resume Generator</h1>
+            <a href="Index.html"  <button class="btn px-4 btn-primary">Home</button></a>
+        </div>
+
+        <!---------------------------------- form section ------------------------------------------->
+        <div class="form">
+            <div class="row" id="cv-form">
+                <!------------------------ first half ----------------------------->
+                <div class="col-md-6">
+                    <h3>Personal information</h3>
+                    <div class="form-group mt-2">
+                        <label for="namefield">Name</label>
+                        <input type="text" class="form-control" id="namefield" placeholder="Enter your full name"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="contactfield">Contact No.</label>
+                        <input type="text" class="form-control" id="contactfield" placeholder="Enter your contact number"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Email-ID</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your email ID"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="addressfield">Address</label>
+                        <textarea type="text" rows="5" class="form-control" id="addressfield" placeholder="Enter your address"></textarea>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="imgfield">Select your profile photo</label>
+                        <input type="file" id="imgfield">
+                    </div>
+                </br>
+                    <h6>Important Links</h6>
+
+                    <div class="form-group mt-2">
+                        <label for="linkedinfield">LinkedIn</label>
+                        <input type="text" class="form-control" placeholder="Enter your LinkedIn link here" id="linkedinfield"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="githubfield">Github</label>
+                        <input type="text" class="form-control" placeholder="Enter your Github link here" id="githubfield"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="twitterfield">Twitter</label>
+                        <input type="text" class="form-control" placeholder="Enter your Twitter link here" id="twitterfield"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="fbfield">Facebook</label>
+                        <input type="text" class="form-control" placeholder="Enter your Facebook link here" id="fbfield"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="instafield">instagram</label>
+                        <input type="text" class="form-control" placeholder="Enter your instagram link here" id="instafield"/>
+                    </div>
+                </div>
+
+                <!------------------------ second half --------------------------->
+                <div class="col-md-6">
+                    <h3>Professional Infromation</h3>
+                    <div class="form-group mt-2">
+                        <label for="">Objective</label>
+                        <textarea type="text" class="form-control" id="objectivefield" placeholder="Enter here" rows="5"></textarea>
+                    </div>
+
+                    <!---------------------------- adding new field start --------------------------->
+                    <div class="form-group mt-2" id="we">
+                        <label for="">Work Experience</label>
+                        <textarea class="form-control wefield" placeholder="Enter here" rows="3"></textarea>
+                    
+                        <!------------------------ add button -------------------------->
+                        <div class="container text-center mt-2" id="weAddButton">
+                            <button onclick="addNewWEField()" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                    <!----------------------- adding new field end ------------------------------>
+                    
+                    <div class="form-group mt-2" id="aq">
+                        <label for="">Academic Qualification</label>
+                        <textarea class="form-control aqfield" placeholder="Enter here" rows="2"></textarea>
+                    
+                    <!------------------------ add button -------------------------->
+                        <div class="container text-center mt-2" id="aqAddButton">
+                            <button onclick="addNewAQField()" class="btn btn-primary">Add</button>
+                        </div>
+
+                    </div>
+
+                <!----------------------------- generate button -------------------------------------->
+          </div>
+            <div class="text-center mt-5" style="padding-bottom: 20px;">
+               <button onclick="generateCV()" class="btn btn-danger">Generate CV</button>
+            </div>    
+        </div>
+        <hr>
+        <!--------------------------------------- cv template ----------------------------------------------->
+        <div class="container" id="cv-template">
+            <div class="row">
+                <!--------------------------- first half -------------------------->
+                <div class="col-md-4">
+
+                    <img src="https://th.bing.com/th/id/OIP.5zdvdrOBkusHfJFaMH7S1gHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7" alt="" id="imgT">
+                    <!------------------------ name ----------------------------->
+                    <h5 style="padding-top: 10px;" id="nameT">Omkar Vishnu Lingayat</h5>
+                    <!------------------------ contact no ------------------------->
+                    <div style="display: flex; padding-left: 100px; padding-top: 20px;">
+                        <i class="fa-solid fa-phone"></i><p id="contactT">  +91 7350327538</p>                        
+                   </div>
+                   <!-------------------------- email ----------------------------->
+                    <div style="display: flex; padding-left: 50px;" >
+                        <i class="fa-solid fa-at" ></i><p id="emailT">  omkarlingayat37@gmail.com</p>
+                    </div>
+                    <!------------------------- address -------------------------->
+                    <div style="display: flex; padding-left: 50px;">
+                        <i class="fa-solid fa-location-dot" ></i><p id="addressT"> 123 City pride, Ambegaon, pune</p>
+                    </div>
+                
+                    <hr>
+
+                    <!----------------------- links ------------------------------>
+                    <div class="link">
+                        <h5>FIND ME ONLINE</h5>
+                        <hr>
+                        <i class="fa-brands fa-linkedin "></i><a id="linkedinT" href="#1">https://www.linkedin.com/in/omkar-lingayat-5a803521b/</a>
+                        </br><i class="fa-brands fa-github"></i><a id="githubT" href="#1">https://www.linkedin.com/in/omkar-lingayat-5a803521b/</a>
+                        </br><i class="fa-brands fa-twitter"></i><a id="twitterT" href="#1">https://www.linkedin.com/in/omkar-lingayat-5a803521b/</a>
+                        </br><i class="fa-brands fa-instagram"></i><a id="instagramT" href="#1">https://www.linkedin.com/in/omkar-lingayat-5a803521b/</a>
+                        </br><i class="fa-brands fa-facebook"></i><a id="facebookT" href="#1">https://www.linkedin.com/in/omkar-lingayat-5a803521b/</a>
+                    </div>
+                </div>
+
+                <!-------------------------- second half --------------------------->
+                <div class="col-md-8">
+                    <h1 id="nameT1" style="text-align: center; padding-top: 70px; margin-bottom: 110px; font-family: Gill Sans, sans-serif;">Omkar Vishnu Lingayat</h1>
+                    
+                    <!-------------------- objective ------------------------------>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Objective</h4>
+                        </div>
+                        <div class="card-body">
+                            <p id="objectiveT">I am a highly motivated, result-oriented individual, willing to go the
+                                extra mile to reach goals and learn along the way.</p>
+                        </div>
+                    </div>
+
+                    <!------------------ work experience ------------------------>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Work Experience</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul id="weT">
+                                <li>Action verbs differ from passive verbs.</li>
+                                <li>Action verbs differ from passive verbs.</li>
+                                <li>Action verbs differ from passive verbs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!------------------ academic qualification ---------------->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Academic Qualification</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul id="aqT">
+                                <li>Action verbs differ from passive verbs.</li>
+                                <li>Action verbs differ from passive verbs.</li>
+                                <li>Action verbs differ from passive verbs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--------------------------- print button -------------------------->
+            <div style="text-align: center; margin-top: 50px;">
+                <button onclick="printCV()" type="print" id="printT" class="btn-primary btn-lg" style="padding: 2px; height: 50px; width: 100px;">Print</button>
+            </div>
+            
+        </div>
+<hr>
+        <!--------------------------------- footer section ------------------------------------------->
+        <div class="footer">
+            <div class="row">
+                <div class="col">
+                    <img src="img/heart.png">
+                    <h4>Free</h4>
+                    <p>The platform is accessible at no cost.<br>
+                         You can pick from a diverse selection<br>
+                          of our free professional templates.</p>
+                </div>
+                <div class="col">
+                    <img src="img/free_-removebg-preview.png">
+                    <h4>No Hidden Costs</h4>
+                    <p>Unlike our competitor,<br>
+                         we do not impose a subscription<br>
+                        service on our customers.<br>
+                         Our paid template,<br>
+                          in addition to our "Free Template",<br>
+                         is only a one-time fee, allowing us<br>
+                          to give back to the LaTeX writing community.</p>
+                </div>
+                <div class="col">
+                    <img src="img/secure.png">
+                    <h4>Private and Secure</h4>
+                    <p>We understand the importance<br>
+                         of data privacy and make it<br>
+                          our mission to protect it.</p>
+                </div>
+            </div>
+        </div>
+        <div class="social-media">
+            <div class="icons">
+                <a href="https://www.facebook.com/omkar.lingayat.77920" target="_blank" <i class="fa-brands fa-facebook fa-2x" style="color:white"></i></a>
+                <a href="https://www.instagram.com/om_lingayat_/?igshid=ZDdkNTZiNTM%3D" target="_blank" <i class="fa-brands fa-instagram fa-2x" style="color:white;"></i></a>
+                <a href="https://twitter.com/OMKARLINGAYAT15?t=tXliU0wb-bu7XFDJZOrbaQ&s=08" target="_blank" <i class="fa-brands fa-square-twitter fa-2x" style="color:white;"></i></a>
+                <a href="https://www.linkedin.com/in/omkar-lingayat-5a803521b/" target="_blank" <i class="fa-brands fa-linkedin fa-2x" style="color:white;"></i></a>
+                <a href="https://github.com/Lingayat-Omkar" target="_blank" <i class="fa-brands fa-github fa-2x" style="color:white;"></i></a>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    
+    <!------------------------- java script file and bootstrap link for js ----------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="JavaScript.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+.footer{
+    /*padding-top: 10px;
+    padding-left: 20px;
+    */color: white;
+    background-color: rgb(71, 71, 71);
+}
+
+.col img{
+    height: 50px;
+    width: 90px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.col{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.social-media{
+    background-color: rgb(18, 18, 36);
+    align-items: center;
+}
+
+.social-media .icons{
+    margin-left: 470px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.fa-brands {
+    padding-left: 20px;
+}
+
+.two{
+    margin-top: 30px;
+}
+
+.steps img{
+    margin-left: 200px;
+}
+
+.one{
+    display:flex;
+}
+
+.inner-one{
+    margin-left: 100px;
+    display: block;
+}
+
+/*-------------------------------------  resume page -----------------------------*/
+/*------------------------------------- form section ------------------------------*/
+.form{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    color: brown;
+    background-color: aquamarine;
+}
+
+.form .row{
+    font-size: larger;
+    border-color: black;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/*#cv-form{
+    display: none;
+}*/
+
+#cv-template{
+    display: none;
+}
+
+/*--------------------------------- cv template ---------------------------------*/
+.col-md-4 img{
+    height: 200px;
+    width: 200px;
+    border: 1px solid  red;
+    border-radius: 50%;
+    padding-top: 2px;
+}
+
+.col-md-4{
+    color: black;
+    text-align: center;
+}
+
+.col-md-8{
+    color: black;
+    /*text-align: center;*/
+}
+
+.card{
+    background-color: aquamarine;
+    margin-top: 40px;
+}
+
+.card-header{
+    background-color: rgb(22, 190, 112);
+    padding: 5px;
+}
